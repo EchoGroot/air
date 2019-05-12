@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/charts/chartUtils/builder/_ChartDataLabelBuilder",["../ChartTypes","../plots/Ring","./_ChartDataUtil"],function(p,m,e){return{formatDataLabel:function(f,n,g,b,c){var d=-1!==b.dataLabels.indexOf("Label"),k=-1!==b.dataLabels.indexOf("Value"),l=-1!==b.dataLabels.indexOf("Percent"),a="";if(c===p.RING)d&&(a+=n),k&&(a+=(d?m.LABEL_SEPARATOR:"")+e.formatNumber(f,b,void 0,c)),l&&(a+=(d?m.LABEL_SEPARATOR:"")+(g?e.formatNumber(f/g*100,b,!0,c):""));else if(d||
+k||l){var h=0,a="";d&&(a+="\x3cdiv\x3e"+n+"\x3c/div\x3e",h++);k&&(a+="\x3cdiv\x3e"+e.formatNumber(f,b,void 0,c)+"\x3c/div\x3e",h++);l&&(a+="\x3cdiv\x3e"+(g?e.formatNumber(f/g*100,b,!0,c):"")+"\x3c/div\x3e",h++);a="\x3cdiv two-row-label\x3d'"+(1<h)+"'\x3e"+(a+"\x3c/div\x3e")}return a}}});

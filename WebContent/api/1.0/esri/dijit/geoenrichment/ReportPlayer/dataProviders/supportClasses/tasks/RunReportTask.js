@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/dataProviders/supportClasses/tasks/RunReportTask","dojo/_base/declare dojo/_base/lang dojo/Deferred dojo/when ./parsers/DataXMLParser ./EnrichAreasTask ../AnalysisAreaJsonUtil".split(" "),function(l,d,f,m,n,p,q){var g={_cache:{},_buildKey:function(a){return[a.geoenrichmentUrl,a.countryID,a.hierarchy,JSON.stringify(q.areasToJson(a.analysisAreas,{excludeInfoTemplate:!0})),a.report.reportID,a.report.portalUrl,a.report.modified].join("_")},getCopy:function(a){a=
+this._buildKey(a);return(a=this._cache[a])&&d.clone(a)},copyAndPut:function(a,c){var b=this._buildKey(a);this._cache[b]=c&&d.clone(c)}},r={execute:function(a){var c=a.cacheResult&&g.getCopy(a);return c?m(c):(new p).createReport(a).then(function(b){var c=b&&b.taskID;b=b&&b.result;try{var e;b&&"object"===typeof b&&(e=b.error);if(!e&&"string"===typeof b&&-1!==b.indexOf("{"))try{var d=JSON.parse(b);e=d&&d.error}catch(h){}if(e)return(new f).reject(e);var k={taskID:c,areaData:n.parse(b)};a.cacheResult&&
+g.copyAndPut(a,k);return k}catch(h){return(new f).reject(h)}})}};return l(null,{execute:function(a){console.log("Creating a new report...");return r.execute(a)}})});

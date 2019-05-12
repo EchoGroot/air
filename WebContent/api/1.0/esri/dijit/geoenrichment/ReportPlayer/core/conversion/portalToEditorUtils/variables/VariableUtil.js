@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/conversion/portalToEditorUtils/variables/VariableUtil",[],function(){return{fieldTagToVariable:function(a,b){return a.attributes.MapTo&&"AREA_ID"!==a.attributes.Name?{id:a.attributes.MapTo.substr(a.attributes.MapTo.lastIndexOf(".")+1),fullName:a.attributes.MapTo,alias:a.attributes.Alias,fieldCategory:a.attributes.FieldCategory,fieldName:a.attributes.Name,precision:Number(a.attributes.Decimals)||0,calculatorName:b,templateName:b?b+"."+a.attributes.Name:
+null,isScriptVariable:!1}:null},scriptTagToVariable:function(a,b){return{id:a.attributes.Name,fullName:a.attributes.Name,fieldName:a.attributes.Name,alias:a.attributes.Alias,fieldCategory:a.attributes.FieldCategory,precision:Number(a.attributes.Decimals)||0,usedFields:a.attributes.usedFields?a.attributes.usedFields.split(","):[],calculatorName:b,templateName:b?b+"."+a.attributes.Name:null,isScriptVariable:!0}}}});

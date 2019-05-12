@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/utils/requests/ErrorUtil",["dojo/_base/lang","dojo/Deferred","require"],function(g,h,k){function l(a){var b=new h;k(["./DataResource"],function(m){when((new m(a)).getFileContent(),b.resolve,b.reject)});return b.promise}var d={getErrorFromBin:function(a){var b=/^text\//;return a&&a.type&&!b.test(a.type)?null:when(a&&l(a),function(a){if(a){if(a.hasOwnProperty("contentType")&&!b.test(a.contentType))return null;try{var c=JSON.parse(decodeURIComponent(escape(a.data))),
+e=d.parseError(c);if(e)return e;if(c.messages&&c.messages.length){var f=c.messages[0];if("esriJobMessageTypeError"==f.type)return Error(f.description)}}catch(n){}}return Error("Binary data error.")})},parseError:function(a){var b;a.error?b=d.makeError(a.error):"error"===a.status&&(b=d.makeError(a));b&&b.code&&null==b.httpCode&&(b.httpCode=b.code);return b},makeError:function(a){a instanceof Error||("string"===typeof a&&(a={message:a}),a=g.mixin(Error(),a));a.log=dojoConfig.isDebug;return a}};return d});

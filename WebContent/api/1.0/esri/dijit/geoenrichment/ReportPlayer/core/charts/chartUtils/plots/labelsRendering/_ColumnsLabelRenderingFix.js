@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/charts/chartUtils/plots/labelsRendering/_ColumnsLabelRenderingFix",["dojo/_base/declare","./LabelsUtil"],function(c,h){return c(null,{createLabel:function(b,e,f,a){function d(){var d=h.getLabelInfo(g,e,a);g._renderOutside(d,b,e,f,a)}function c(){var c=h.getLabelInfo(g,e,a);c.box.h>f.height?g.chart.plotArea.height-f.height>c.box.h&&d():g._renderInside(c,b,e,f,a)}var g=this;this.opt.labels&&"outside"===this.opt.labelStyle?d():this.opt.labels&&"inside"===
+this.opt.labelStyle?c():this.inherited(arguments)},_renderOutside:function(b,e,c,a,d){this.renderLabel(e,a.x+a.width/2-b.box.w/2,a.y-this.opt.labelOffset-b.box.h*(b.numRows-1)/2,b.text,d,"start","left")},_renderInside:function(b,c,f,a,d){this.renderLabel(c,a.x+a.width/2,a.y+a.height/2+b.box.h/2-b.box.h*(b.numRows-1)/2,b.text,d,!0)}})});

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/conversion/portalToEditorUtils/parsers/_FieldInfoBuilder",["../../../supportClasses/templateJsonUtils/fieldInfo/FieldInfoBuilder"],function(d){return{getCalculatorOrScriptFieldInfo:function(a,b,e,c){if(!a)return null;if(b.variableProvider.isDummy){c=b.variableProvider.toCalculator(a);if(!c)return console.log("Can't create a dummy calculator for \x3d\x3e "+a),null;b=d.createFieldInfoFromCalculator(c,b.variableProvider,e,c.variable.calculatorName);
+b.name=c.variable.fieldName;b.templateName=c.variable.templateName;return b}var f=a.substr(a.indexOf(".")+1);return(a=b.queryMetaDataFunc(a)||b.queryMetaDataFunc(f))?d[a.isMissing?"createFieldInfoFromMissingVariable":a.isScript?"createFieldInfoFromScript":"createFieldInfoFromCalculator"](a,b.variableProvider,e,c):null}}});

@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/utils/DynamicStyleUtil",[],function(){var d={};return{addStyle:function(c,a){d[a]&&this.removeStyle(a);var e=document.head,f=c.map(function(b){var a=document.createElement("style");a.type="text/css";b.id&&(a.id=b.id);b=b.content||b;a.innerHTML=b&&b.replace&&b.replace(/&#65279;/gi,"")||"";e.appendChild(a);return a});a&&(d[a]=f)},removeStyle:function(c){var a=d[c];if(a){var e=document.head;a.forEach(function(a){e.removeChild(a)});delete d[c]}},getStyle:function(c){return d[c]}}});

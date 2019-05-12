@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/ReportPlayerViewModel",["dojo/_base/declare","./core/themes/ThemeLibrary","./core/themes/ReportThemes","../utils/ColorUtil"],function(d,e,b,f){return d(null,{reportStyle:null,layoutBuilder:null,dynamicReportInfo:null,chartAnimationAllowed:!0,enableDataDrilling:!0,_theme:null,getCurrentTheme:function(a){return this._theme},setTheme:function(a){this._theme=a||e.getReportThemeById(b.GRAPHIC)},getTableDefaultStyles:function(a,b){var c=this._theme.table;return b?
+c[b]:c},getChartDefaultStyles:function(a){return this._theme.chart},getDocumentDefaultStyles:function(a){return this._theme.document},getInfographicDefaultStyles:function(a){return this._theme.infographic},getStaticInfographicDefaultStyles:function(a){return(a=this.getInfographicDefaultStyles(a))&&a.staticInfographic},isLightDocumentTheme:function(a){return f.isLightColor(this._theme.document.backgroundColor)},setDynamicReportInfo:function(a){this.dynamicReportInfo=a;this.reportStyle=a.isClassic?
+b.CLASSIC:b.GRAPHIC},getDynamicImageFunc:function(a,b){},enrichFieldData:function(a){}})});

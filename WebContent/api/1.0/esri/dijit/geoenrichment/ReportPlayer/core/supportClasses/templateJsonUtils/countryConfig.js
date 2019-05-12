@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/supportClasses/templateJsonUtils/countryConfig",[],function(){var a={},b;a.getCountryID=function(){return b&&b.id};a.getCurrencySymbol=function(){return b&&b.currencySymbol||"$"};a.setCountry=function(a){b=a};var c;a.getHierarchyID=function(){return c};a.setHierarchyID=function(a){c=a||"census"};var d;a.getGeographiesModel=function(){return d};a.setGeographiesModel=function(a){d=a};return a});

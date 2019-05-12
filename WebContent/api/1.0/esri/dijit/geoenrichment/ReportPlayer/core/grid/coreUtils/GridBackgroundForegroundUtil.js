@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/grid/coreUtils/GridBackgroundForegroundUtil",["dojo/_base/lang","dojo/dom-construct"],function(f,g){var d={renderBackground:function(a,b,e){return d._renderSection(a,b,e,!0)},renderForeground:function(a,b,e){return d._renderSection(a,b,e,!1)},_renderSection:function(a,b,e,d){g.empty(d?a.backgroundNode:a.foregroundNode);if(!b)return null;var c={};c["class"]="esriGEAbsoluteStretched "+(d?"adjustableGrid_backgroundSection":"adjustableGrid_foregroundSection");
+c.initialWidth=a.getAllowedWidth();c.json=b;c.viewModel=a.viewModel;c.themeContext=a.themeContext;c.theme=a.theme;c.hasFixedLayout=!1;c.parentWidget=a;f.mixin(c,e);b=a.viewModel.layoutBuilder.createElement("section",c,d?a.backgroundNode:a.foregroundNode);b.setResizedHeight(a.getHeight());b.setViewMode(a.getViewMode(),a.getSpecificViewMode());return b}};return d});

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/infographics/extentions/BaseSelectComparisonExt",["dojo/_base/lang","dojo/dom-class","esri/dijit/geoenrichment/BaseSelectComparison","esri/dijit/geoenrichment/OnDemandSelect","../../supportClasses/comparison/ComparisonListUtil"],function(e,f,g,h,c){var d=!1;return{init:function(){d||(d=!0,e.extend(g,{_createComboBox:function(a){var b=this;f.add(a,"BaseSelectComparison_Select");this.select=new h({listClass:"esriGEOnDemandSelectVeryTallList",itemRenderer:new c.ComparisonListItemRenderer,
+onChange:function(){var a=b._state.selectedComparison;b._state.selectedComparison=+b.select.get("value");b._state.selectedComparison!==a&&b.updateUIExpanded()}});this.select.placeAt(a)},updateUIExpanded:function(){this.inherited("updateUIExpanded",arguments);if(this.select&&!this.select.options){var a=c.getListOptions(this.data.features);this.select.set("options",a);this.select.set("value",this._state.selectedComparison.toString())}}}))}}});

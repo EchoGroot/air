@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/dataProviders/supportClasses/AnalysisAreaJsonUtil",["esri/graphic","esri/dijit/PopupTemplate"],function(f,g){return{areasToJson:function(e,c){function b(a){if(!a)return null;a.getLayer()&&(a=new f(a.geometry,a.symbol,a.attributes,a.infoTemplate));a=a.toJson();c&&c.excludeInfoTemplate&&delete a.infoTemplate;return a}return e.map(function(a){var d={},c;for(c in a)"string"===typeof a[c]&&(d[c]=a[c]);d.feature=b(a.feature);d.additionalFeatures=a.additionalFeatures&&
+a.additionalFeatures.map(b);d.geographies=a.geographies;return d})},areasFromJson:function(e){function c(b){if(!b)return null;var a=b.infoTemplate&&new g(b.infoTemplate);delete b.infoTemplate;b=new f(b);a&&b.setInfoTemplate(a);return b}return e.map(function(b){var a={},d;for(d in b)"string"===typeof b[d]&&(a[d]=b[d]);a.feature=c(b.feature);a.additionalFeatures=b.additionalFeatures&&b.additionalFeatures.map(c);a.geographies=b.geographies;return a})}}});

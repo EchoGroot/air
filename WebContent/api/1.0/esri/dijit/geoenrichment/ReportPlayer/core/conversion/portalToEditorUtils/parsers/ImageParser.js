@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/conversion/portalToEditorUtils/parsers/ImageParser",["../../ConversionUtil","./AlignParser"],function(c,h){var e={getElement:function(g,d){var a=g.attributes,b=d.templateJson.metadata.mapImageInfosHash[a.name],e="mapImage"===g.name,f=e?null:d.processFileName(a.src),b={id:"img",fileName:f,isMapImage:e,circularMask:a.circularMask,scaleToCover:a.scaleToCover,webMapId:b?b.webMapId:a.webMapId,defaultBasemapId:b?b.defaultBasemapId:a.defaultBasemapId,mapScale:b?
+b.mapScale:null,calculatorFieldName:b&&b.fieldName,style:{top:c.ptToPx(a.top)||0,left:c.ptToPx(a.left)||0,width:c.ptToPx(a.width),height:c.ptToPx(a.height),angle:Number(a.angle)||0,opacity:Math.min(1,Number(0===a.opacity?0:a.opacity||1))},isLogoPlaceholder:a.isLogoPlaceholder,dynamicBehavior:a.dynamicBehavior};h.parseAlign(a,b.style);1>d.revisionVersion&&(b.style.angle=c.ptToPx(b.style.angle),b.style.opacity=Math.min(1,c.ptToPx(b.style.opacity)));f&&d.putImageData(f,a.data);return b},parseMapImageDField:function(c,
+d){return e.getElement({name:"mapImage",attributes:{name:c}},d)}};return e});

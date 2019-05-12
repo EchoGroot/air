@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/dataProviders/supportClasses/TemplateJsonLoader",["dojo/_base/lang","dojo/Deferred","dojo/when","./CustomReportsManager","../../core/conversion/PortalToEditorConverter"],function(c,h,e,k,l){var f={_templatesCache:{},getCachedTemplateJson:function(a){var b=this._templatesCache[a.reportID];return b&&b.modified===a.modified?c.clone(b.templateJson):null},putCachedTemplateJson:function(a,b){this._templatesCache[b.reportID]={modified:b.modified,templateJson:c.clone(a)}}};
+return{getTemplateJsonByID:function(a,b){var c=this,d=new h;e(k.getCustomReportByID(a),function(a){if(a){var g=b&&f.getCachedTemplateJson(a);if(g)d.resolve(g);else return e(c._loadCustomReportData(a),function(){return e(l.provideEditorJson(a),function(){var c=a.templateJson;a.portalJson=null;a.templateJson=null;b&&f.putCachedTemplateJson(c,a);d.resolve(c)})})}else d.reject("Can't find a report")},d.reject);return d.promise},_loadCustomReportData:function(a){a.portalJson=null;return a.templateData.getFiles().then(function(b){a.portalJson=
+{files:b}})}}});

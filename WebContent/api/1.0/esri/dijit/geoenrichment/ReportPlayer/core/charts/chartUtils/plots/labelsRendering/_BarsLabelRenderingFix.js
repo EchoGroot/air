@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/charts/chartUtils/plots/labelsRendering/_BarsLabelRenderingFix",["dojo/_base/declare","./LabelsUtil"],function(e,l){return e(null,{createLabel:function(b,d,c,a,k,m){function g(){var f=l.getLabelInfo(h,d,a);h._renderOutside(f,b,d,c,a,k,m)}function e(){var f=l.getLabelInfo(h,d,a);f.box.h>c.height||(f.box.w>c.width?h.chart.plotArea.width-c.width>f.box.w&&g():h._renderInside(f,b,d,c,a))}var h=this;this.opt.labels&&"outside"===this.opt.labelStyle?g():
+this.opt.labels&&"inside"===this.opt.labelStyle?e():this.inherited(arguments)},_renderOutside:function(b,d,c,a,k,e,g){c=a.y+b.box.h/b.numRows+(a.height-b.box.h)/2-2;switch(this.opt.labelHorizontalAlign){case "right":a=e.width-g.l-g.r-b.box.w/2;break;default:a=a.x+a.width+this.opt.labelOffset}this.renderLabel(d,a,c,b.text,k,"start","left")},_renderInside:function(b,d,c,a,e){c=a.y+b.box.h/b.numRows+(a.height-b.box.h)/2-2;switch(this.opt.labelHorizontalAlign){case "left":a=a.x+b.box.w/2+this.opt.labelOffset;
+break;case "right":a=a.x+a.width-b.box.w/2;break;default:a=a.x+a.width/2}this.renderLabel(d,a,c,b.text,e,!0)}})});

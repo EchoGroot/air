@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/conversion/portalToEditorUtils/parsers/DocumentParser",["dojo/_base/lang","esri/dijit/geoenrichment/utils/JsonXmlConverter","../../ConversionUtil","../../../supportClasses/templateJsonUtils/fieldInfo/FieldInfoNameUtil","../../../supportClasses/DocumentOptions"],function(h,f,d,l,k){return{parseDocument:function(e,g){var c=g.templateJson,b="HTMLextReport"===e.name?e:f.queryJson(e,"HTMLextReport",!0)[0];if(b){var a=b.attributes.orientation||"portrait";
+c.documentOptions.pagesize=k.tryGetStandardPageSize(b.attributes.pagesize,a);c.documentOptions.orientation=a;["left","right","top","bottom"].forEach(function(a){c.documentOptions[a]=d.ptToPx(b.attributes[a]||0)});h.mixin(c.documentOptions,d.ptToPxObj(d.parseStyleString(b.attributes.style)));if(a=f.queryJson(e,"def",!0)[0])a.attributes.align&&(c.documentOptions.align=a.attributes.align),a.attributes.lineSpacing&&(c.documentOptions.lineSpacing=d.ptToPx(a.attributes.lineSpacing));g.revisionVersion=b.attributes.revisionVersion?
+Number(b.attributes.revisionVersion):-1}}}});

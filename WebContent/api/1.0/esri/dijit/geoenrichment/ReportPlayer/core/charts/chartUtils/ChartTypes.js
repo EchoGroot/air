@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/charts/chartUtils/ChartTypes",[],function(){var a={COLUMN:"Column",LINE:"Line",BAR:"Bar",PIE:"Pie",DONUT:"Donut",GAUGE:"Gauge",RING:"Ring",PICTURE_COLUMN:"PictureColumn",PICTURE_BAR:"PictureBar",COLUMN_LINE:"ColumnLine",BAR_LINE:"BarLine"};a.CLASSIC_CHART_TYPES=[a.COLUMN,a.LINE,a.BAR,a.PIE];a.AVAILABLE_CHART_TYPES=a.CLASSIC_CHART_TYPES.concat([a.DONUT,a.GAUGE,a.RING,a.PICTURE_COLUMN,a.PICTURE_BAR]);a.isPieLike=function(b){return b===a.PIE||b===a.DONUT||
+b===a.GAUGE};a.isRoundChart=function(b){return a.isPieLike(b)||b===a.RING};a.isColumnBarLike=function(b){return b===a.COLUMN||b===a.BAR||b===a.PICTURE_COLUMN||b===a.PICTURE_BAR};a.isColumnLike=function(b){return b===a.COLUMN||b===a.PICTURE_COLUMN};a.isBarLike=function(b){return b===a.BAR||b===a.PICTURE_BAR};a.isPictureLike=function(b){return b===a.PICTURE_COLUMN||b===a.PICTURE_BAR};a.isComparisonEnabled=function(b){return b===a.COLUMN||b===a.BAR||b===a.LINE};a.isConditionalStylingEnabled=function(b){return a.isColumnBarLike(b)||
+b===a.RING};a.isLegendEnabled=function(b){return b!==a.RING&&b!==a.GAUGE};a.isSortingEnabled=function(b){return a.isColumnBarLike(b)||b===a.RING};return a});

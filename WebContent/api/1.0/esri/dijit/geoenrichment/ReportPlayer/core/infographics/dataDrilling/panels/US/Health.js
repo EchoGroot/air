@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/infographics/dataDrilling/panels/US/Health",["../../ChartBuilder"],function(b){var a={};a.exercise={states:"n,p,i",defaultState:"i",fieldInfo:{isChart:!0,chartJson:b.createChart({title:"Exercise",points:[{label:"Exercise at home 2+ times per week",fullName:"HealthPersonalCare.MP14001a_B"},{label:"Exercise at club 2+ times per week",fullName:"HealthPersonalCare.MP14002a_B"},{label:"Exercise at other facility (not club) 2+ times/wk",fullName:"HealthPersonalCare.MP14003a_B"},
+{label:"Used exercise program for diet method",fullName:"HealthPersonalCare.MP14016a_B"}],visualProps:{sorting:"Descending"}})}};return a});

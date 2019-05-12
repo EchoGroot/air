@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/dataProviders/supportClasses/attachments/DefaultAttachmentsStore",["dojo/_base/declare","dojo/promise/all","dojo/when","./WebMapAttachmentStore"],function(d,e,f,g){return d(null,{_context:null,_currentAreaIndex:-1,_webMapStores:null,constructor:function(a){this._context=a},initialize:function(){var a=this;this._webMapStores={};return e(this._context.analysisAreas.map(function(b,h){var c=b.feature||b.additionalFeatures&&b.additionalFeatures[0];if(c)return(a._webMapStores[h]=
+new g(c)).initialize()})).then(function(){return a})},_callStoreMethod:function(a){var b=this._webMapStores[this._currentAreaIndex];return b?f(b[a](),function(a){return a?a.slice():[]}):[]},getAttachments:function(){return this._callStoreMethod("getAttachments")},getAttributes:function(){return this._callStoreMethod("getAttributes")},getNotes:function(){return this._callStoreMethod("getNotes")},setCurrentAnalysisAreaIndex:function(a){this._currentAreaIndex=a}})});

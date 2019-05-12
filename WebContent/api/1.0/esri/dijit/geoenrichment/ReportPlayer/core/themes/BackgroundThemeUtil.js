@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/themes/BackgroundThemeUtil",["dojo/dom-class","dojo/dom-construct","dojo/dom-style","esri/dijit/geoenrichment/ReportPlayer/core/supportClasses/DocumentOptions"],function(h,e,k,l){return{applyBackgroundImageFromSettings:function(d,a,b){b=b||{};d.__bgImage&&e.destroy(d.__bgImage);delete d.__bgImage;if(!a||!a.data)return!1;var f=e.create("div",{"class":"esriGEAbsoluteStretched"},d,"first"),c=e.create("div",{style:"background-repeat: no-repeat; background-size: cover;"},
+f);c.style.backgroundPosition=a.position||"center";c.style.backgroundImage="url("+a.data+")";c.style.backgroundRepeat=a.repeat?"repeat":"no-repeat";0<a.opacity&&1>a.opacity&&(c.style.opacity=a.opacity);c.style.backgroundSize=a.scale?a.repeat?"contain":"cover":"";if(b.documentOptions&&b.pos){a=l.getPageBox(b.documentOptions);var g=b.zoom||1;f.style.overflow="hidden";k.set(c,{position:"absolute",width:a.w+"px",height:a.h+"px",left:-b.pos.x/g+"px",top:-b.pos.y/g+"px"})}else h.add(c,"esriGEAbsoluteStretched");
+d.__bgImage=f;return d.__bgImage}}});

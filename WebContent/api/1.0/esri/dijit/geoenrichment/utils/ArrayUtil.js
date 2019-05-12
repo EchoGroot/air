@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/utils/ArrayUtil",["dojo/_base/array"],function(g){var b={},h={}.toString();b.composeIdentityFunction=function(c,d){var b="function"===typeof c?c:c?function(a){return a[c]}:function(a){return a};return function(a){return(a=b(a))&&a.toString?a.toString():d&&void 0===a?a:String(a)}};b.removeDuplicates=function(c,d){var f=[],a={};d=b.composeIdentityFunction(d,!0);g.forEach(c,function(b,c){var e=d(b);e===h&&(void 0===b["__ArrayUtil.js_uniqueKey__"]&&(b["__ArrayUtil.js_uniqueKey__"]=
+"__ArrayUtil.js_uniqueKey__"+c),e=b["__ArrayUtil.js_uniqueKey__"]);void 0===e||e in a||(a[e]=b,f.push(b))});return f};return b});

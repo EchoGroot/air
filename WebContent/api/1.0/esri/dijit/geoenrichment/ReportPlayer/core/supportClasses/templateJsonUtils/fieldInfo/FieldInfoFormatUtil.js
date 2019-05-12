@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/supportClasses/templateJsonUtils/fieldInfo/FieldInfoFormatUtil",[],function(){return{buildFormatStringFromFieldInfo:function(a){if(a.format)return a.format;var b=a.decimals,d=a.showCurrency,e=a.showPercent;a=!!a.useThousandsSeparator;var c="";d&&(c+="\\$");a&&(c+="#,#");c+="0";if(0<b)for(c+=".";b--;)c+="0";!d&&e&&(c+="\\%");return c},setFieldInfoFormat:function(a,b){"object"===typeof b?(a.showCurrency=b.showCurrency,a.showPercent=b.showPercent,a.useThousandsSeparator=
+!!b.useThousandsSeparator,a.decimals=Number(b.decimals)||0):(a.showCurrency=-1!==b.indexOf("$"),a.showPercent=-1!==b.indexOf("%"),a.useThousandsSeparator=-1!==b.indexOf("#,#"),a.decimals=0,-1!==b.indexOf("0.")&&(a.decimals=b.split("0").length-2))}}});

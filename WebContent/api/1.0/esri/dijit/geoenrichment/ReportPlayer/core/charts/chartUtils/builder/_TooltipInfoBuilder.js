@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/charts/chartUtils/builder/_TooltipInfoBuilder",["./_ChartDataUtil"],function(e){return{getTooltipInfo:function(b,f,g,h,k,c,l,d,m,n,p){function a(a){return e.formatNumber(a||0,d,void 0,m)}return{color:n,label:f,seriesLabel:g,valueLabel:a(b),sumValueLabel:a(c),minValueLabel:a(h),maxValueLabel:a(k),avgValueLabel:a(l),percentLabel:c?a(b/c*100)+"%":"",formatFunc:a,showPercent:-1!==d.dataLabels.indexOf("Percent"),value:b,conditionalStyling:p,getGroup:null}}}});

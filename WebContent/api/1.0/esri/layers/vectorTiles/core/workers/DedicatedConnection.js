@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/layers/vectorTiles/core/workers/DedicatedConnection",["require","exports","./workers"],function(e,f,d){return function(){function a(a,b,c){this.client=a;this.id=b;this._targetWorker={id:c}}Object.defineProperty(a.prototype,"workerId",{get:function(){return this._targetWorker.id},enumerable:!0,configurable:!0});a.prototype.invoke=function(a,b,c){return d.invoke(a,b,c,this._targetWorker,this.id)};a.prototype.close=function(){d.closeConnection(this)};return a}()});

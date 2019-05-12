@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/dataProviders/commands/supportClasses/ImageSaveUtil","dojo/when dojo/Deferred esri/dijit/geoenrichment/utils/FileUtil esri/dijit/geoenrichment/utils/DataUtil esri/dijit/geoenrichment/utils/ImageUtil esri/dijit/geoenrichment/utils/async/AsyncQueue".split(" "),function(f,l,m,h,n,k){return{saveImages:function(d,c){if(d&&d.length){var p=1<d.length,g=0,e=[],b=new l;f(k.executeFunctions(d.map(function(b){return function(){var a=b.dataURL||b,a=n.base64DataFromDataURL(a),
+a=atob(a),d=h.binaryStringToByteArray(a).buffer;e.push({name:function(){var a=c.reportTitle;p&&(a+="_"+c.analysisAreas[Math.floor(g/c.numPages)].name+"_Page "+(g%c.numPages+1));return a+".png"}(),data:h.arrayBuffersToBlob([d],"image/png"),base64Data:a});g++}}),0),function(){1<e.length&&c.saveMultipleImages?f(c.saveMultipleImages(e),b.resolve,b.reject):f(k.executeFunctions(e.map(function(b){return function(){if(!c.skipSavingFile){var a=b.filename;return c.confirmSaveFile(a,function(){m.saveAs(b.data,
+a)})}}}),100),function(){b.resolve(e)},b.reject)});return b.promise}}}});

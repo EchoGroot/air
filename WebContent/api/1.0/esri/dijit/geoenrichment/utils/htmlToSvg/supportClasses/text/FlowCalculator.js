@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/utils/htmlToSvg/supportClasses/text/FlowCalculator",["dojo/dom-construct","dojo/dom-geometry","./SiblingsUtil","../_Logger"],function(h,b,g,k){return{getSpanFlowOffsets:function(a,b){if(!a.innerHTML||!a.innerHTML.trim())return{start:0,end:0};switch(b.style.textAlign){case "center":return{start:0,end:0};case "left":case "start":return this._getSpanFlowOffsetsLeft(a,b);case "right":case "end":return this._getSpanFlowOffsetsRight(a,b)}},_getSpanFlowOffsetsLeft:function(a,
+h){var e,c;e=a.innerHTML;c=g.hideNextSiblings(a);var d=b.position(a),f;a.innerHTML="a";f=b.position(a);if(d.y!==f.y&&(a.innerHTML=" a",f=b.position(a),d.y!==f.y))return k.log("ERROR: Can't calculate text flow for text'"+e+"'."),a.innerHTML=e,g.showNextSiblings(c),{start:0,end:0};a.innerHTML=e;g.showNextSiblings(c);return{start:d.h===f.h?0:f.x-d.x,end:0}},_getSpanFlowOffsetsRight:function(a,g){var e=h.create("span",{innerHTML:"|"},a,"after"),c=b.position(a),d=b.position(e);h.destroy(e);return{start:0,
+end:10<Math.abs(c.y+c.h-(d.y+d.h))?0:c.x+c.w-d.x}}}});

@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.23/esri/copyright.txt for details.
+//>>built
+define("esri/dijit/geoenrichment/ReportPlayer/core/sections/sectionUtils/SectionJsonUtil",["esri/dijit/geoenrichment/ReportPlayer/core/sections/SectionTypes"],function(f){var e={wrapInDetailsSectionJson:function(a,d){var b=Array.isArray(a)?a:[a],c=b.some(function(a){return"table"===a.id&&a.attributes&&(0<a.attributes.dynamicColumns||0<a.attributes.dynamicRows)});return{type:d||(c?f.GROUP:f.DETAILS),stack:b}},getSectionJsonInfographic:function(a){return(a=a.stack[0])&&"table"===a.id&&e.getTableJsonInfographic(a)},
+tableJsonHasInfographic:function(a){return!!e.getTableJsonInfographic(a)},getTableJsonInfographic:function(a){var d;a.data.data.some(function(a){if(a.fieldInfos)for(var c in a.fieldInfos){var b=a.fieldInfos[c];if(b&&b.isInfographic)return d=b.infographicJson,!0}});return d},getTableJsonFirstFieldInfo:function(a){return a.data.data[0].fieldInfos[a.data.columns[0].field]},tableJsonHasChart:function(a){return a.data.data.some(function(a){if(a.fieldInfos)for(var b in a.fieldInfos){var c=a.fieldInfos[b];
+if(c&&c.isChart)return!0}})}};return e});

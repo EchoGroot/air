@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.2//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huibo.dao.AirportDao">
+	<select id="findAirportMaxIds" resultType="com.huibo.bo.AirportLogBo">
+		SELECT  
+			air.AIRPORT_CODE airportCode,
+			air.AIRPORT_NAME airportName,
+			MAX( log.LOG_ID ) maxId
+		FROM
+			info_airport_log log
+			JOIN info_airport air ON air.AIRPORT_CODE = log.AIRPORT_CODE 
+		GROUP BY
+			air.AIRPORT_CODE
+	</select>
+	<select id="findAirportLog" resultType="com.huibo.bo.AirportLogBo">
+		SELECT
+			air.AIRPORT_CODE airportCode,
+			air.AIRPORT_NAME airportName,
+			log.LOG_ID logId,
+			log.POINT_X pointX,
+			log.POINT_Y pointY,
+			log.POINT_VEC vec	
+		FROM
+			info_airport_log log
+			JOIN info_airport air ON air.AIRPORT_CODE = log.AIRPORT_CODE 
+		WHERE
+			log.LOG_ID=#{indexId} and air.AIRPORT_CODE=#{airportCode}
+	</select>
+
+</mapper>
